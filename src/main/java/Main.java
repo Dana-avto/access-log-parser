@@ -10,12 +10,12 @@ public class Main {
             File file = new File(path);
             boolean fileExists = file.exists();
             boolean isDirectory = file.isDirectory();
-            if (!fileExists || isDirectory) {
-                if (!fileExists) {
-                    System.out.println("Файл не существует по указанному пути.");
-                } else {
-                    System.out.println("Указанный путь ведёт к папке, а не к файлу.");
-                }
+            if (!fileExists) {
+                System.out.println("Файл не существует по указанному пути.");
+                continue;
+            }
+            if (isDirectory) {
+                System.out.println("Указанный путь ведёт к папке, а не к файлу.");
                 continue;
             }
             correctFileCount++;
